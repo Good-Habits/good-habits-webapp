@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
+const slug = require("mongoose-slug-updater");
 
+mongoose.plugin(slug);
 mongoose
   .connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
