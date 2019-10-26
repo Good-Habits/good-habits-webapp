@@ -1,6 +1,3 @@
-// Enable reading from the ".env" files
-require("dotenv").config();
-
 const mongoose = require("mongoose");
 
 mongoose
