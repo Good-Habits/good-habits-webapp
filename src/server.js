@@ -7,6 +7,13 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
+// Importing configured Mongoose instance
+require("./db");
+// Importing configured passport instance
+const passport = require("./user/auth");
+// Importing routes
+const authRoutes = require("./user/routes");
+
 // Create new Express application
 const app = express();
 app.set("views", "./layouts");
@@ -27,12 +34,19 @@ app.use(
     saveUninitialized: false
   })
 );
+// Initialize Passport and restore authentication state, if any, from the session.
+app.use(passport.initialize());
+app.use(passport.session());
 // Load static assets - client code, styles, images
 app.use("/public", express.static(path.join(__dirname, "..", "public")));
 
 // Define routes
+app.use("/auth", authRoutes);
 app.get("/", (req, res) => {
-  res.render("index");
+  if (req.user) {
+    res.render("index");
+  }
+  res.redirect("/auth/login");
 });
 
 // Shit happens! If encounter unknown url, force redirect to main page
@@ -41,4 +55,6 @@ app.use(function(req, res, next) {
 });
 
 const port = process.env.PORT;
-app.listen(port, () => console.log(`Good Habits app listening on port ${port}!`));
+app.listen(port, () =>
+  console.log(`Good Habits app listening on port ${port}!`)
+);

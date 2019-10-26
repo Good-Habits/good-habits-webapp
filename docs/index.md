@@ -1,3 +1,4 @@
 # Good Habits Documentation
 
-[Architecture Decisions](architecture-decisions.md)
+- [Infrastructure Decisions](infrastructure-decisions.md)
+- [Architecture Decisions](architecture-decisions.md)
