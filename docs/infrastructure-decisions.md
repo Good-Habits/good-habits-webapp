@@ -9,6 +9,7 @@
 - [Authentication](#authentication)
 - [Bundler](#bundler)
 - [Styles](#styles)
+- [Linting](#linting)
 - [Client](#client)
 
 ## Programming Language
@@ -84,6 +85,13 @@ CSS variables and Grid, a lot is possible! Also if you
 start splitting the style files, you then have less idea
 how big your styles file is, I hope that keeping them
 in one file will help me contain them in meaninful size.
+
+## Linting
+
+**Husky**. Consistent code-style is one of this things
+that might feel a bit too much, but then, imagine all
+the broken history if you don't start with it. And
+your friend Hasky will never let you commit ugly code!
 
 ## Client
 
