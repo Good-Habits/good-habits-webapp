@@ -1,9 +1,10 @@
 # Architecture Decisions
 
-> I was raised in Django world
+- [Application Structure](#application-structure)
 
-- [Application structure](#application-structure)
-- [User app](#user-app)
+## Application structure
+
+> I was raised in Django world
 
 During past time I think a lot about how to structure
 a fullstack application.
@@ -17,10 +18,12 @@ application, and this is how I would do it.
 
 _Beware! I am mixing client and server code in apps!_
 
-## Application structure
+Example structure of the app:
 
 ```
 src/
+    auth/
+    habit/
     user/
         components/
         models/
@@ -31,6 +34,9 @@ src/
     server.js
 ```
 
-## User app
-
-Holds User model, authentication logic and routes.
+**Note**: With this approach of mixing the server and
+the client code based on apps, one downside is that
+in the server files we would have client code, that is
+compiled to the bundle, but on the other hand, since
+it won't be imported to the server code, there should
+not be any critical problems.
