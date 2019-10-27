@@ -5,7 +5,8 @@ mongoose.plugin(slug);
 mongoose
   .connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
   })
   .catch(e => console.error(e));
 mongoose.set("useCreateIndex", true);
