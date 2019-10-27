@@ -7,7 +7,7 @@ Documentation can be found **[here](docs/index.md)**
 
 ## Quickstart Guide
 
-:eyeglasses: In-depth guide can be found **[here](docs/set-up-guide.md)**
+:eyeglasses: In-depth guide can be found **[here](docs/setup-guide.md)**
 
 1. Create new OAuth app in GitHub [here](https://github.com/settings/applications/)
 1. Clone the project

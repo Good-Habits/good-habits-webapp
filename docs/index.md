@@ -1,6 +1,6 @@
 # Good Habits Documentation
 
-- [Set Up Guide](set-up-guide.md)
+- [Set Up Guide](setup-guide.md)
 - [Apps Overview](apps-overview.md)
 - [API Structure](api-structure.md)
 - [Infrastructure Decisions](infrastructure-decisions.md)
