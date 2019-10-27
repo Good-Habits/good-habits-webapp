@@ -6,6 +6,7 @@
 h1, h2, p { color: var(--white-color); }
 
 body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   max-width: 800px;
   min-height: 100vh;
   margin: 0 auto;
@@ -16,6 +17,7 @@ body {
 .logo {
   font-size: 4em;
   margin-top: 30vh;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .centered {
@@ -33,5 +35,22 @@ body {
   /* Make it the size of the content */
   display: inline-block;
   padding: 10px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.habit-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.habit-list li {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  border: 2px solid var(--white-color);
+}
+
+.habit-detail {
+  text-decoration: none;
+  padding-left: 15px;
 }

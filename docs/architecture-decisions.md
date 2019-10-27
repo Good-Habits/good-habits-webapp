@@ -1,6 +1,7 @@
 # Architecture Decisions
 
 - [Application Structure](#application-structure)
+- [Client Store](#client-store)
 
 ## Application structure
 
@@ -28,6 +29,7 @@ src/
         components/
         models/
             User.js
+        store.js
         routes.js
     client.js
     db.js
@@ -40,3 +42,15 @@ in the server files we would have client code, that is
 compiled to the bundle, but on the other hand, since
 it won't be imported to the server code, there should
 not be any critical problems.
+
+## Client Store
+
+I feel that for this particular project, something like
+full-throtle store Redux, VuEx will be complete overkill.
+Of course it makes sense for a big application and tons
+of wrappers to make it work make perfect sense.
+
+Internally Mithril call lightweight JS objects that hold
+the state "models", but in my opinion it more likely
+to be the store and also it would allow to not clash
+the names with database models.

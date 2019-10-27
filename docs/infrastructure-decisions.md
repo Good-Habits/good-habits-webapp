@@ -95,4 +95,29 @@ your friend Hasky will never let you commit ugly code!
 
 ## Client
 
-TODO: Needs to be decided
+Before looking into mithril I tried a lot of frameworks.
+
+*Vue* - it was awesome, but now they discourage use of
+single-file components?
+
+*React* - is off, because I wanted to try something new.
+Also router and XHR is a separate packages.
+
+*Svelte* - was really nice, but I got overhelmed by the
+functionality.
+
+*Preact* - the same as React, but faster. Still no
+router and XHR.
+
+*Ember* - really, really nice. Opinionated structure,
+testing from the tutorial! But, the concepts is a lot
+outdated with controllers and component separated into
+the template.
+
+*Web-components* - syntax looks a bit complicated from
+what I would expect.
+
+**Mithril** - routing, XHR out of the box, components,
+simple JS objects as a store. Template syntax a bit
+fanky, but can be converted to the JSX, although I
+don't see any real need for that.

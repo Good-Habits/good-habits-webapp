@@ -1,23 +1,17 @@
-const root = document.querySelector("#app");
-root.innerHTML = "<h1>It builds!</h1>";
+import m from "mithril";
+import HabitListView from "./habit/views/HabitListView";
 
-var request = new XMLHttpRequest();
-request.open("GET", "/api/habit/list", true);
+const root = document.getElementById("app");
 
-request.onload = function() {
-  if (this.status >= 200 && this.status < 400) {
-    // Success!
-    var data = JSON.parse(this.response);
-    console.log(data);
-  } else {
-    // We reached our target server, but it returned an error
-    console.error("Failed!");
-  }
-};
-
-request.onerror = function(error) {
-  // There was a connection error of some sort
-  console.warn(error);
-};
-
-request.send();
+if (root) {
+  m.route(
+    root,
+    // default route, "/" will be redirected here
+    "/app",
+    {
+      "/app": HabitListView
+    }
+  );
+} else {
+  console.warn("Can't find #app element on the page!");
+}
