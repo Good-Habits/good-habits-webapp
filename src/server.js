@@ -13,6 +13,7 @@ require("./db");
 const passport = require("./user/auth");
 // Importing routes
 const authRoutes = require("./user/routes");
+const habitRoutes = require("./habit/routes");
 
 // Create new Express application
 const app = express();
@@ -42,6 +43,7 @@ app.use("/public", express.static(path.join(__dirname, "..", "public")));
 
 // Define routes
 app.use("/auth", authRoutes);
+app.use("/api/habit", habitRoutes);
 app.get("/", (req, res) => {
   if (req.user) {
     res.render("index");
