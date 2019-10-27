@@ -10,9 +10,9 @@ const logger = require("morgan");
 // Importing configured Mongoose instance
 require("./db");
 // Importing configured passport instance
-const passport = require("./user/auth");
+const passport = require("./auth");
 // Importing routes
-const authRoutes = require("./user/routes");
+const authRoutes = require("./auth/routes");
 const habitRoutes = require("./habit/routes");
 
 // Create new Express application

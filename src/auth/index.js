@@ -1,7 +1,7 @@
 const passport = require("passport");
 const githubStrategy = require("passport-github").Strategy;
 
-const User = require("./models/User");
+const User = require("../user/models/User");
 
 // Configure the GitHub strategy for use by Passport.
 //
