@@ -6,7 +6,7 @@ router.get("/login", (req, res) => res.render("login"));
 router.get("/github", passport.authenticate("github"));
 router.get(
   "/verify",
-  passport.authenticate("github", { failureRedirect: "/login" }),
+  passport.authenticate("github", { failureRedirect: "/auth/login" }),
   (req, res) => {
     // Successful authentication, redirect home.
     res.redirect("/");

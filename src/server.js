@@ -45,8 +45,9 @@ app.use("/auth", authRoutes);
 app.get("/", (req, res) => {
   if (req.user) {
     res.render("index");
+  } else {
+    res.redirect("/auth/login");
   }
-  res.redirect("/auth/login");
 });
 
 // Shit happens! If encounter unknown url, force redirect to main page
