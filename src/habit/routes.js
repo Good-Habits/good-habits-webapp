@@ -6,7 +6,11 @@ router.get("/list", async (req, res) => {
   if (req.user) {
     try {
       habits = await Habit.find(
+        // A filter query to the database
         { user: req.user._id },
+        // Selecting the fields that we want,
+        // and removing the `_id` field, that
+        // adds by MongoDB by default
         { name: 1, slug: 1, _id: 0 }
       );
     } catch (e) {
@@ -15,7 +19,7 @@ router.get("/list", async (req, res) => {
     }
     return res.json(habits);
   }
-  return res.json({});
+  res.json({});
 });
 
 module.exports = router;
