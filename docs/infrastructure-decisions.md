@@ -11,6 +11,7 @@
 - [Styles](#styles)
 - [Linting](#linting)
 - [Client](#client)
+- [Styleguide](#styleguide)
 
 ## Programming Language
 
@@ -118,6 +119,15 @@ the template.
 what I would expect.
 
 **Mithril** - routing, XHR out of the box, components,
-simple JS objects as a store. Template syntax a bit
-fanky, but can be converted to the JSX, although I
-don't see any real need for that.
+simple JS objects as a store. JSX can be enabled with
+a bit of configuration. Good deal.
+
+## Styleguide
+
+At first, I went for the storybook. But I saw horrors. I
+understood, that this is HELL. 490 dependencies. Is this
+real? Is this necessary? I want to have a styleguide for
+the project, but this is too much. So I went with a
+"poor man styleguide". A static HTML page with
+components. A bit of a hussle to maintain, but simlple,
+easy to understand thing.

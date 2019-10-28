@@ -1,16 +1,19 @@
 import m from "mithril";
-import Habit from "../store";
+import Habit from "~/habit/store";
 
-import HabitLink from "../components/HabitLink";
+import TopNav from "~/misc/components/TopNav";
+import HabitsList from "~/habit/components/HabitsList";
 
 const HabitListView = {
   oninit: Habit.loadHabits,
   view() {
-    return m(
-      "ul.habit-list",
-      Habit.list.map(habit => {
-        return m("li", m(HabitLink, { habit: habit }));
-      })
+    return (
+      <>
+        <TopNav title="Habits" />
+        <main>
+          <HabitsList habits={Habit.list} />
+        </main>
+      </>
     );
   }
 };

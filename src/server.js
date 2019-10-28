@@ -44,6 +44,7 @@ app.use("/public", express.static(path.join(__dirname, "..", "public")));
 // Define routes
 app.use("/auth", authRoutes);
 app.use("/api/habit", habitRoutes);
+app.use("/storybook", (req, res) => res.render("storybook"));
 app.get("/", (req, res) => {
   if (req.user) {
     res.render("index");

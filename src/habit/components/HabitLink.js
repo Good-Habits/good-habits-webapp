@@ -3,7 +3,19 @@ import m from "mithril";
 const HabitLink = {
   view(vnode) {
     const { habit } = vnode.attrs;
-    return m("a", { href: "#", class: "habit-detail" }, habit.name);
+    return (
+      <li className="habit-detail horizontal-centered">
+        <a href="#" className="btn vertical-centered">
+          {habit.name}
+        </a>
+        <button
+          type="button"
+          className="btn plus horizontal-centered vertical-centered"
+        >
+          +
+        </button>
+      </li>
+    );
   }
 };
 
