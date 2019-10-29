@@ -1,8 +1,17 @@
 # Set Up Guide
 
+- [Requirements](#requirements)
 - [GitHub OAuth](#github-oauth)
 - [Environment](#environment)
 - [Starting up the app](#starting-up-the-app)
+
+## Requirements
+
+In order to run this app, you will need:
+
+- MongoDB (running locally or hosted solution)
+- Node v8 and later
+- GitHub Account
 
 ## GitHub OAuth
 
