@@ -11,9 +11,19 @@ and GitHub OAuth strategy as authentication strategy.
 
 ## User
 
-Contains user model, API routes for managing
-User Profile.
+Contains only user model for now. Since in this 
+project, we are using OAuth authentication
+provided by GitHub, we don't need a lot of user-
+specific stuff. In the future when User profile
+will be implemented, this will be a place to put
+such routes and components.
 
 ## Habit
 
-Contains Habit model, API routes to manage habits.
+Contains Habit model, API routes to manage habits
+and a store.
+
+## Misc
+
+Right now contins general comnents, like navigation
+bar.

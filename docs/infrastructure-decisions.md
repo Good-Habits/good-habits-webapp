@@ -11,6 +11,7 @@
 - [Styles](#styles)
 - [Linting](#linting)
 - [Client](#client)
+- [App State](#app-state)
 - [Styleguide](#styleguide)
 
 ## Programming Language
@@ -121,6 +122,14 @@ what I would expect.
 **Mithril** - routing, XHR out of the box, components,
 simple JS objects as a store. JSX can be enabled with
 a bit of configuration. Good deal.
+
+## App state
+
+Right now I am using regular JS object for this
+purpose. But as app grows, it might be a good idea
+to use something else. Probably not Redux, don't
+like the ceremonies with mapping state and dispatchers.
+Maybe MobX?
 
 ## Styleguide
 
