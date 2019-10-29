@@ -5,9 +5,7 @@ const TopNav = {
     const { title } = vnode.attrs;
     return (
       <nav className="horizontal-centered">
-        <a href="#" className="humburger shake">
-          🍔
-        </a>
+        <button className="shake">🍔</button>
         <p>
           <i>Good</i>
           <strong>Habits</strong>

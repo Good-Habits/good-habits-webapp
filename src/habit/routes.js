@@ -21,5 +21,20 @@ router.get("/list", async (req, res) => {
   }
   res.json({});
 });
+router.get("/:slug", async (req, res) => {
+  if (req.user) {
+    try {
+      habit = await Habit.findOne(
+        { slug: req.params.slug },
+        { name: 1, slug: 1, _id: 0 }
+      );
+    } catch (e) {
+      console.error(e);
+      return res.json({});
+    }
+    return res.json(habit);
+  }
+  res.json();
+});
 
 module.exports = router;

@@ -1,7 +1,8 @@
 import m from "mithril";
 
-const Habit = {
+const HabitStore = {
   list: [],
+  detail: {},
   loadHabits() {
     m.request({
       method: "GET",
@@ -9,9 +10,19 @@ const Habit = {
       // Enable sending cookies
       withCredentials: true
     }).then(data => {
-      Habit.list = data;
+      HabitStore.list = data;
+    });
+  },
+  loadDetail(vnode) {
+    const habitSlug = vnode.attrs.key;
+    m.request({
+      method: "GET",
+      url: `/api/habit/${habitSlug}`,
+      withCredentials: true
+    }).then(data => {
+      HabitStore.detail = data;
     });
   }
 };
 
-export default Habit;
+export default HabitStore;

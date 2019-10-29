@@ -1,5 +1,6 @@
 import m from "mithril";
 import HabitListView from "./habit/views/HabitListView";
+import HabitDetailView from "./habit/views/HabitDetailView";
 
 const root = document.getElementById("app");
 
@@ -9,7 +10,10 @@ if (root) {
     // default route, "/" will be redirected here
     "/app",
     {
-      "/app": HabitListView
+      "/app": HabitListView,
+      // https://mithril.js.org/route.html#key-parameter
+      // forcing the component to recreate itself, instead of updating
+      "/habit/:key": HabitDetailView
     }
   );
 } else {
