@@ -7,7 +7,8 @@
     "live:client": "parcel build src/client.js --out-dir public --public-url .",
     "lint": "prettier --check \"src/**/*.js\"",
     "fix": "prettier --write \"src/**/*.js\"",
-    "start": "npm run dev:client & nodemon --watch src src/server.js"
+    "dev": "npm run dev:client & nodemon --watch src src/server.js",
+    "start": "npm run live:client && node src/server.js"
   },
   "husky": {
     "hooks": {

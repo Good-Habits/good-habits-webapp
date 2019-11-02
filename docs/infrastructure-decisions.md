@@ -6,6 +6,7 @@
 - [Documentation](#documentation)
 - [Database](#database)
 - [Server](#server)
+- [Deploy](#deploy)
 - [Authentication](#authentication)
 - [Bundler](#bundler)
 - [Styles](#styles)
@@ -51,6 +52,30 @@ barebone and minimal. Since I am planning just a bit
 1-2 static pages and 2 API endpoints. It looks a way
 to go. I decided to avoid picking the BIG web-framework
 built on top of express for this particular project.
+
+## Deploy
+
+My friend shared recently that he had a good experience
+with the **CapRover** tool to deploy his pet projects on the
+Digital Ocean VPS without hassle. Other alternatives
+respectfully:
+
+- AWS/Google/Azure + Terraform. This is what we were using on my
+  work for one of the projects. A lot of setup, but if I
+  would work on a startup I would probably go with that
+  way, it will pay off with scaling and a lot of
+  services that it provides for dbs, logs, notifications,
+  you name it.
+- Heroku. Expensive, everybody knows that. But good developer
+  experience, it is just works.
+- Dokku. Claims to be the smallest PaaS provider out there,
+  but documentation is a bit clumsy, no quick setup guide,
+  did not find information how to add HTTPS to the app,
+  is it possible to deploy via webhook.
+  It seems that the project is mature, has active development
+  going on and might be worth looking over.
+
+More info about deploys [here](./deploy.md)
 
 ## Authentication
 
