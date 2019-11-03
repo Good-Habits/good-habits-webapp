@@ -3,12 +3,13 @@ require("dotenv").config();
 
 const express = require("express");
 const expressSession = require("express-session");
+const MongoSessionStore = require("connect-mongo")(expressSession);
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
 // Importing configured Mongoose instance
-require("./db");
+const mongooseConnection = require("./db");
 // Importing configured passport instance
 const passport = require("./auth");
 // Importing routes
@@ -32,7 +33,8 @@ app.use(
   expressSession({
     secret: process.env.SECRET,
     resave: true,
-    saveUninitialized: false
+    saveUninitialized: false,
+    store: new MongoSessionStore({ mongooseConnection })
   })
 );
 // Initialize Passport and restore authentication state, if any, from the session.
