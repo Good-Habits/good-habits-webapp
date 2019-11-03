@@ -5,7 +5,6 @@ const express = require("express");
 const expressSession = require("express-session");
 const MongoSessionStore = require("connect-mongo")(expressSession);
 const path = require("path");
-const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
 // Importing configured Mongoose instance
@@ -28,7 +27,6 @@ app.use(express.json());
 // Morgan logger, check out different pre-build display formats!
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(
   expressSession({
     secret: process.env.SECRET,
