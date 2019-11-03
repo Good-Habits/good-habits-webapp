@@ -14,4 +14,4 @@ Documentation can be found **[here](docs/index.md)**
 1. Copy the `.env.example` to `.env`
 1. Fill in the information in the `.env` file
 1. Install the dependencies `npm install`
-1. Run the app `npm start`
+1. Run the app `npm run dev`

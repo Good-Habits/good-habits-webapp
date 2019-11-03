@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev:client": "parcel watch src/client.js --out-dir public --public-url .",
-    "live:client": "parcel build src/client.js --out-dir public --public-url .",
+    "client:watch": "parcel watch src/client.js --out-dir public --public-url .",
+    "client:build": "parcel build src/client.js --out-dir public --public-url .",
     "lint": "prettier --check \"src/**/*.js\"",
     "fix": "prettier --write \"src/**/*.js\"",
-    "dev": "npm run dev:client & nodemon --watch src src/server.js",
-    "start": "npm run live:client && node src/server.js"
+    "dev": "npm run client:watch & nodemon --watch src src/server.js",
+    "start": "npm run client:build && node src/server.js"
   },
   "husky": {
     "hooks": {

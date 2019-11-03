@@ -17,7 +17,8 @@ In order to run this app, you will need:
 
 In order for this app to be able to authenticate
 the user, you need to get the client_id and secret
-key. To do so [here](https://github.com/settings/applications/) new application should be registered.
+key. To do so [here](https://github.com/settings/applications/)
+new application should be registered.
 If you want to test it locally, Homepage URL will be
 `http://127.0.0.1:3000/` and callback URL
 `http://127.0.0.1:3000/auth/verify`.
@@ -36,6 +37,7 @@ PORT=3000
 
 GITHUB_CLIENT_ID=<unset>
 GITHUB_CLIENT_SECRET=<unset>
+GITHUB_CALLBACK=<unset>
 ```
 
 ## Starting up the app
@@ -45,8 +47,8 @@ commands to the terminal:
 
 ```bash
 npm install
-npm start
+npm run dev
 ```
 
-This will install all the necessery libraries and
+This will install all the necessary libraries and
 start the development server.
