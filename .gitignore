@@ -2,3 +2,5 @@ node_modules/
 .cache
 .env
 public/client.js*
+.data/
+.idea/
