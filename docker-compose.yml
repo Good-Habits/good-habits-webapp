@@ -1,0 +1,19 @@
+version: "3"
+services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    volumes:
+      - ".data/mongo:/data/db"
+  node:
+    build: .
+    container_name: node
+    env_file: .env
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    command: "npm run dev"
+    depends_on:
+      - mongo
