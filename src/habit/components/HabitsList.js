@@ -1,5 +1,4 @@
-import React from "react";
-
+import { h } from "preact";
 import HabitLink from "./HabitLink";
 
 const HabitsList = ({ habits }) => (

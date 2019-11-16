@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { h, Fragment } from "preact";
+import { useState, useEffect } from "preact/hooks";
 
 import TopNav from "../../misc/components/TopNav";
 import Spinner from "../../misc/components/Spinner";
@@ -11,7 +12,7 @@ const HabitDetailView = props => {
   useEffect(() => {
     const fetchHabitDetails = async () => {
       try {
-        const url = `/api/habit/${props.match.params.slug}`;
+        const url = `/api/habit/${props.slug}`;
         const response = await fetch(url, { credentials: "same-origin" });
         const data = await response.json();
         setHabit(data);
@@ -24,10 +25,10 @@ const HabitDetailView = props => {
   }, []);
 
   return (
-    <>
+    <Fragment>
       <TopNav title="Details" />
       <main>{loading ? <Spinner /> : <HabitHeader habit={habit} />}</main>
-    </>
+    </Fragment>
   );
 };
 
