@@ -1,17 +1,13 @@
-import m from "mithril";
+import React from "react";
+
 import HabitLink from "./HabitLink";
 
-const HabitsList = {
-  view(vnode) {
-    const { habits } = vnode.attrs;
-    return (
-      <ul className="habit-list">
-        {habits.map(habit => (
-          <HabitLink habit={habit} key={habit.slug} />
-        ))}
-      </ul>
-    );
-  }
-};
+const HabitsList = ({ habits }) => (
+  <ul className="habit-list">
+    {habits.map(habit => (
+      <HabitLink key={habit.slug} habit={habit} />
+    ))}
+  </ul>
+);
 
 export default HabitsList;

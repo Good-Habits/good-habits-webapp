@@ -1,17 +1,12 @@
-import m from "mithril";
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-const HabitHeader = {
-  view(vnode) {
-    const { habit } = vnode.attrs;
-    const backUrl = m(m.route.Link, { href: "/app" }, "« back");
-    return (
-      <div class="habit-header">
-        {backUrl}
-        <h2>{habit.name}</h2>
-        <a href="#">edit</a>
-      </div>
-    );
-  }
-};
+const HabitHeader = ({ habit }) => (
+  <div className="habit-header">
+    <NavLink to="/">« back</NavLink>
+    <h2>{habit.name}</h2>
+    <NavLink to={`/habit/${habit.slug}/edit`}>edit</NavLink>
+  </div>
+);
 
 export default HabitHeader;

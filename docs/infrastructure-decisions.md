@@ -122,7 +122,20 @@ your friend Hasky will never let you commit ugly code!
 
 ## Client
 
-Before looking into mithril I tried a lot of frameworks.
+**React** feels comfortable and with the Hooks, writing
+components is less code than it was before.
+
+First version of the clientwas written in Svelte,
+but something was off with that setup, exporting
+variables as props seems to be a bit too magical.
+Then I tried to reimplemented it in Mithril, all was
+good, but when time came to do forms, it filed and
+I needed to install old libraries and handle elements
+auto-updating which was far from enjoyable. The other
+thing was, that PyCharm/WebStorm does not know much
+about Mithril and keep spamming me with warnings.
+
+General thoughts about frameworks.
 
 *Vue* - it was awesome, but now they discourage use of
 single-file components?
@@ -146,7 +159,7 @@ what I would expect.
 
 **Mithril** - routing, XHR out of the box, components,
 simple JS objects as a store. JSX can be enabled with
-a bit of configuration. Good deal.
+a bit of configuration.
 
 ## App state
 
