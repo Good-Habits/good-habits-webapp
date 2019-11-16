@@ -1,5 +1,5 @@
 import { h } from "preact";
 
-const Spinner = () => h("div", "Loading...");
+const Spinner = () => <div>Loading...</div>;
 
 export default Spinner;

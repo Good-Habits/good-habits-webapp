@@ -5,16 +5,16 @@ import Router from "preact-router";
 import { h, render } from "preact";
 
 import HabitListView from "./habit/views/HabitListView";
-// import HabitDetailView from "./habit/views/HabitDetailView";
-// import HabitEditView from "./habit/views/HabitEditView";
+import HabitDetailView from "./habit/views/HabitDetailView";
+import HabitEditView from "./habit/views/HabitEditView";
 
-const App = () =>
-  h(
-    Router,
-    // h('HabitEditView', {path: '/habit/:slug/edit'}),
-    // h('HabitDetailView', {path: "/habit/:slug"}),
-    h(HabitListView, { path: "/" })
-  );
+const App = () => (
+  <Router>
+    <HabitEditView path="/habit/:slug/edit" />
+    <HabitDetailView path="/habit/:slug" />
+    <HabitListView path="/" />
+  </Router>
+);
 
 const root = document.getElementById("app");
 if (root) {

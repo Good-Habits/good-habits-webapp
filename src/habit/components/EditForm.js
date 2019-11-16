@@ -7,21 +7,22 @@ const EditForm = ({ initial }) => {
     event.preventDefault();
     console.log(name);
   };
-  return h(
-    "form",
-    { onsubmit: onSubmit },
-    h(
-      "fieldset",
-      h("label", { for: "habit-name" }, "Habit Name"),
-      h("input", {
-        type: "text",
-        min: 3,
-        required: true,
-        value: name,
-        onchange: event => setName(event.target.value)
-      })
-    ),
-    h("button", { class: "btn", type: "submit", onclick: onSubmit })
+  return (
+    <form onSubmit={onSubmit}>
+      <fieldset>
+        <label htmlFor="habit-name">Habit Name</label>
+        <input
+          type="text"
+          minLength={3}
+          required
+          value={name}
+          onChange={event => setName(event.target.value)}
+        />
+      </fieldset>
+      <button className="btn" type="submit" onClick={onSubmit}>
+        Save
+      </button>
+    </form>
   );
 };
 

@@ -1,12 +1,17 @@
 import { h } from "preact";
 
-const TopNav = ({ title }) =>
-  h(
-    "nav",
-    { class: "horizontal-centered" },
-    h("button", { class: "shake" }, "🍔"),
-    h("p", h("i", "Good"), h("strong", "Habits"), title && `: ${title}`),
-    h("a", { href: "/auth/logout", class: "logout" }, "logout")
-  );
+const TopNav = ({ title }) => (
+  <nav className="horizontal-centered">
+    <button className="shake">🍔</button>
+    <p>
+      <i>Good</i>
+      <strong>Habits</strong>
+      {title && `: ${title}`}
+    </p>
+    <a href="/auth/logout" className="logout">
+      logout
+    </a>
+  </nav>
+);
 
 export default TopNav;

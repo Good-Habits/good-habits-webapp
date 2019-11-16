@@ -24,10 +24,11 @@ const HabitListView = () => {
     fetchHabits();
   }, []);
 
-  return h(
-    Fragment,
-    h(TopNav, { title: "Habits" }),
-    h("main", loading ? h(Spinner) : h(HabitsList, { habits: habits }))
+  return (
+    <Fragment>
+      <TopNav title="Habits" />
+      <main>{loading ? <Spinner /> : <HabitsList habits={habits} />}</main>
+    </Fragment>
   );
 };
 
