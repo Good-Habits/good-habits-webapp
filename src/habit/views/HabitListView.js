@@ -1,5 +1,4 @@
-import {Fragment, h} from 'preact';
-import {useState, useEffect} from "preact/hooks";
+import React, { useState, useEffect } from "react";
 
 import TopNav from "../../misc/components/TopNav";
 import Spinner from "../../misc/components/Spinner";
@@ -25,10 +24,10 @@ const HabitListView = () => {
   }, []);
 
   return (
-    h(Fragment,
-      h(TopNav, {title: "Habits"}),
-      h('main', loading ? h(Spinner) : h(HabitsList, {habits: habits}))
-    )
+    <>
+      <TopNav title="Habits" />
+      <main>{loading ? <Spinner /> : <HabitsList habits={habits} />}</main>
+    </>
   );
 };
 

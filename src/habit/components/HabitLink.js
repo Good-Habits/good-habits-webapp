@@ -1,11 +1,18 @@
-import {h} from 'preact'
-import { Link } from 'preact-router/match';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const HabitLink = ({ habit }) => (
-  h('li', {class: 'habit-detail horizontal-centered'},
-    h(Link, {href: `/habit/${habit.slug}`, class: 'btn vertical-centered'}, habit.name),
-    h('button', {type: 'button', class: 'btn plus horizontal-centered vertical-centered'}, '+'),
-  )
+  <li className="habit-detail horizontal-centered">
+    <NavLink to={`/habit/${habit.slug}`} className="btn vertical-centered">
+      {habit.name}
+    </NavLink>
+    <button
+      type="button"
+      className="btn plus horizontal-centered vertical-centered"
+    >
+      +
+    </button>
+  </li>
 );
 
 export default HabitLink;
