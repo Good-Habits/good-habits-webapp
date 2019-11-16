@@ -1,12 +1,13 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import { h } from "preact";
+import { Link } from "preact-router/match";
 
-const HabitHeader = ({ habit }) => (
-  <div className="habit-header">
-    <NavLink to="/">« back</NavLink>
-    <h2>{habit.name}</h2>
-    <NavLink to={`/habit/${habit.slug}/edit`}>edit</NavLink>
-  </div>
-);
+const HabitHeader = ({ habit }) =>
+  h(
+    "div",
+    { class: "habit-header" },
+    h("Link", { href: "/" }, "« back"),
+    h("h2", habit.name),
+    h("Link", { href: `/habit/${habit.slug}/edit` }, "edit")
+  );
 
 export default HabitHeader;

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { Fragment, h } from "preact";
+import { useState, useEffect } from "preact/hooks";
 
 import TopNav from "../../misc/components/TopNav";
 import Spinner from "../../misc/components/Spinner";
@@ -23,11 +24,10 @@ const HabitListView = () => {
     fetchHabits();
   }, []);
 
-  return (
-    <>
-      <TopNav title="Habits" />
-      <main>{loading ? <Spinner /> : <HabitsList habits={habits} />}</main>
-    </>
+  return h(
+    Fragment,
+    h(TopNav, { title: "Habits" }),
+    h("main", loading ? h(Spinner) : h(HabitsList, { habits: habits }))
   );
 };
 

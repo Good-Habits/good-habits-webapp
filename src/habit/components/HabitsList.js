@@ -1,13 +1,11 @@
-import React from "react";
-
+import { h } from "preact";
 import HabitLink from "./HabitLink";
 
-const HabitsList = ({ habits }) => (
-  <ul className="habit-list">
-    {habits.map(habit => (
-      <HabitLink key={habit.slug} habit={habit} />
-    ))}
-  </ul>
-);
+const HabitsList = ({ habits }) =>
+  h(
+    "ul",
+    { class: "habit-list" },
+    ...habits.map(habit => h(HabitLink, { habit: habit }))
+  );
 
 export default HabitsList;
