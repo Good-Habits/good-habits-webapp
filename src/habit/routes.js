@@ -1,9 +1,9 @@
-const express = require("express");
-const router = express.Router();
+const router = require("express").Router();
 const Habit = require("./models/Habit");
 
 router.get("/list", async (req, res) => {
   if (req.user) {
+    let habits = [];
     try {
       habits = await Habit.find(
         // A filter query to the database
@@ -15,7 +15,6 @@ router.get("/list", async (req, res) => {
       );
     } catch (e) {
       console.error(e);
-      return res.json({});
     }
     return res.json(habits);
   }
@@ -23,6 +22,7 @@ router.get("/list", async (req, res) => {
 });
 router.get("/:slug", async (req, res) => {
   if (req.user) {
+    let habit = {};
     try {
       habit = await Habit.findOne(
         { slug: req.params.slug },
@@ -30,7 +30,6 @@ router.get("/:slug", async (req, res) => {
       );
     } catch (e) {
       console.error(e);
-      return res.json({});
     }
     return res.json(habit);
   }
