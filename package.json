@@ -5,6 +5,7 @@
   "scripts": {
     "client:watch": "parcel watch src/client.js --out-dir public --public-url .",
     "client:build": "parcel build src/client.js --out-dir public --public-url .",
+    "test": "mocha --recursive --file test/setup.js",
     "lint": "prettier --check \"src/**/*.js\"",
     "fix": "prettier --write \"src/**/*.js\"",
     "dev": "npm run client:watch & nodemon --watch src src/server.js",
@@ -25,9 +26,8 @@
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-github": "^1.1.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-router-dom": "^5.1.2"
+    "preact": "^10.0.5",
+    "preact-router": "^3.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",

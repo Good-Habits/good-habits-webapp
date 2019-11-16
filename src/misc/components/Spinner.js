@@ -1,5 +1,5 @@
-import React from "react";
+import {h} from 'preact';
 
-const Spinner = () => <div>Loading...</div>;
+const Spinner = () => h('div', 'Loading...');
 
 export default Spinner;
