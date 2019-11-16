@@ -5,8 +5,9 @@
   "scripts": {
     "client:watch": "parcel watch src/client.js --out-dir public --public-url .",
     "client:build": "parcel build src/client.js --out-dir public --public-url .",
-    "lint": "prettier --check \"src/**/*.js\"",
-    "fix": "prettier --write \"src/**/*.js\"",
+    "test": "jest",
+    "lint": "prettier --check \"src/**/*.js\" --check \"test/**/*.js\"",
+    "fix": "prettier --write \"src/**/*.js\" --write \"test/**/*.js\"",
     "dev": "npm run client:watch & nodemon --watch src src/server.js",
     "start": "npm run client:build && node src/server.js"
   },
@@ -15,7 +16,22 @@
       "pre-commit": "npm run lint"
     }
   },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/setup.js"
+    ],
+    "roots": [
+      "<rootDir>/test"
+    ]
+  },
   "dependencies": {
+    "axios": "^0.19.0",
     "connect-mongo": "^3.1.2",
     "ejs": "^2.7.2",
     "express": "^4.17.1",
@@ -32,7 +48,13 @@
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/polyfill": "^7.7.0",
+    "@babel/preset-react": "^7.7.0",
+    "@babel/register": "^7.7.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "fetch-mock": "^8.0.0",
     "husky": "^3.0.9",
+    "jest": "^24.9.0",
     "nodemon": "^1.19.4",
     "parcel-bundler": "^1.12.4",
     "prettier": "^1.19.1"

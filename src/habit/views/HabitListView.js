@@ -1,34 +1,55 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import axios from "axios";
 
 import TopNav from "../../misc/components/TopNav";
 import Spinner from "../../misc/components/Spinner";
+import Error from "../../misc/components/Error";
 import HabitsList from "../components/HabitsList";
 
-const HabitListView = () => {
-  const [loading, setLoading] = useState(true);
-  const [habits, setHabits] = useState([]);
-
-  useEffect(() => {
+class HabitListView extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { error: "", loading: true, habits: [] };
+  }
+  componentDidMount() {
     const fetchHabits = async () => {
+      const url = "/api/habit/list";
       try {
-        const url = "/api/habit/list";
-        const response = await fetch(url, { credentials: "same-origin" });
-        const data = await response.json();
-        setHabits(data);
+        const response = await axios.get(url);
+        this.setState({ habits: response.data });
       } catch (e) {
+        this.setState({ error: "Error while loading the Habits" });
         console.log(e);
       }
-      setLoading(false);
+      this.setState({ loading: false });
     };
-    fetchHabits();
-  }, []);
+    fetchHabits.bind(this)();
+  }
+  render() {
+    if (this.state.error) {
+      return (
+        <>
+          <TopNav title="Habits" />
+          <main>
+            <Error message={this.state.error} />
+          </main>
+        </>
+      );
+    }
 
-  return (
-    <>
-      <TopNav title="Habits" />
-      <main>{loading ? <Spinner /> : <HabitsList habits={habits} />}</main>
-    </>
-  );
-};
+    return (
+      <>
+        <TopNav title="Habits" />
+        <main>
+          {this.state.loading ? (
+            <Spinner />
+          ) : (
+            <HabitsList habits={this.state.habits} />
+          )}
+        </main>
+      </>
+    );
+  }
+}
 
 export default HabitListView;
